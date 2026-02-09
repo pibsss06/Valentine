@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Be My Valentine?</title>
+  <style>
+    body {
+      background: pink;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding-top: 60px;
+      color: #222;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 18px;
+    }
+    button {
+      padding: 14px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    #yesBtn { background: #e63946; color: white; }
+    #noBtn { background: #ffd6d6; color: #e63946; position: relative; }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+  <button id="yesBtn">Yes 💘</button>
+  <button id="noBtn">No 🙈</button>
+
+  <!-- Hidden YouTube player -->
+  <iframe id="music" width="0" height="0"
+    src=""
+    allow="autoplay"
+    style="display:none;">
+  </iframe>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn  = document.getElementById('noBtn');
+    const music  = document.getElementById('music');
+
+    // Play your song when Yes is clicked
+    yesBtn.onclick = () => {
+      music.src = "https://www.youtube.com/embed/vXc8mhX9i30?autoplay=1&controls=0";
+      alert("So happy!! 🎶❤️");
+    };
+
+    // Simple avoid behavior for the No button
+    noBtn.onmouseover = () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 80 - 40;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    };
+  </script>
+
+</body>
+</html>
